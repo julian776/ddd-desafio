@@ -1,4 +1,4 @@
-package com.sofka.vuelos.avion;
+package com.sofka.vuelos.vuelo;
 
 import co.com.sofka.domain.generic.Identity;
 

@@ -1,6 +1,5 @@
 package com.sofka.vuelos;
 
-import com.sofka.vuelos.venta.vuelo.*;
 import com.sofka.vuelos.vuelo.*;
 
 import java.util.ArrayList;
@@ -17,7 +16,8 @@ public class RepositoryTest {
         List<Pasajero> pasajeros = new ArrayList<>();
         var pasajeroId = new PasajeroId("458");
         Identificacion identificacion = new Identificacion(1456L, "Bob", 32, new Sexo("M"));
-        pasajeros.add(new Pasajero(pasajeroId, identificacion));
+        CuidadosExtra cuidadosAux = new CuidadosExtra(false, false, false, false);
+        pasajeros.add(new Pasajero(pasajeroId, identificacion, cuidadosAux));
         //Create Bodega
         var bodegaId = new BodegaId("456");
         List<PiezaMercancia> piezas = new ArrayList<>();

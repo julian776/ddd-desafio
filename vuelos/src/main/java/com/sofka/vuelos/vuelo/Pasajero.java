@@ -8,10 +8,12 @@ import java.util.Objects;
 public class Pasajero extends Entity<PasajeroId> {
 
     private Identificacion identificacion;
+    private CuidadosExtra cuidadosExtra;
 
-    public Pasajero(PasajeroId entityId, Identificacion identificacion) {
+    public Pasajero(PasajeroId entityId, Identificacion identificacion, CuidadosExtra cuidadosExtra) {
         super(entityId);
         this.identificacion = Objects.requireNonNull(identificacion);
+        this.cuidadosExtra = Objects.requireNonNull(cuidadosExtra);
     }
 
     public void actualizarSexo(Sexo sexo){
@@ -20,5 +22,9 @@ public class Pasajero extends Entity<PasajeroId> {
 
     public void actualizarEdad(Integer edad){
         this.identificacion = identificacion.actualizarEdad(edad);
+    }
+
+    public void actualizarCuidados(Boolean oxigeno, Boolean embarazo, Boolean mareo, Boolean bebe){
+        this.cuidadosExtra = cuidadosExtra.actualizar(oxigeno, embarazo, mareo, bebe);
     }
 }

@@ -27,4 +27,17 @@ public class Tiquete extends Entity<TiqueteId> {
             System.out.println("No fue posible cambiar el vuelo");
         }
     }
+
+    public void generarTiquete(){
+        System.out.println("Id del vuelo "+ vueloId.toString());
+        System.out.println("Ciudad Origen "+ ruta.origen());
+        System.out.println("Ciudad destino "+ ruta.destino());
+        if(ruta.paradas().length > 0 ){
+            System.out.println("Paradas registradas");
+            System.out.println("-------------------");
+            for (String parada : ruta.paradas()) {
+                System.out.println(parada);
+            }
+        }
+    }
 }

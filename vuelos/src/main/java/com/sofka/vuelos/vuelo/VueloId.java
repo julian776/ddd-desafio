@@ -2,9 +2,7 @@ package com.sofka.vuelos.vuelo;
 
 import co.com.sofka.domain.generic.Identity;
 
-public class AvionId extends Identity {
+import java.util.Optional;
 
-    public AvionId(String id){
-
-    }
+public class VueloId extends Identity {
 }

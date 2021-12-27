@@ -19,8 +19,6 @@ class CrearServicioUseCaseTest {
     void servicioCreadoTest(){
 
         //Arrange
-
-
         var command = new CrearServicioPremiumCommand(new ServicioPremiumId("servicio"), new Hashtable<>(), new ArrayList<>(), new Hashtable<>());
         var usecase = new CrearServicioUseCase();
 

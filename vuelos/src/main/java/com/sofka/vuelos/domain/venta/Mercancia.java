@@ -17,9 +17,6 @@ public class Mercancia extends Entity<MercanciaId> {
     public Mercancia(MercanciaId entityId, Boolean asegurado, List<PiezaMercancia> piezasMercancia) {
         super(entityId);
         this.asegurado = Objects.requireNonNull(asegurado);
-        Objects.requireNonNull(cantidad);
-        Objects.requireNonNull(pesoTotal);
-        Objects.requireNonNull(capacidadTotalOcupada);
         this.piezasMercancia = Objects.requireNonNull(piezasMercancia);
 
         this.cantidad = piezasMercancia.size();
@@ -53,5 +50,25 @@ public class Mercancia extends Entity<MercanciaId> {
 
     public void listarMercancia(){
         piezasMercancia.forEach(System.out::println);
+    }
+
+    public List<PiezaMercancia> getPiezasMercancia() {
+        return piezasMercancia;
+    }
+
+    public Boolean getAsegurado() {
+        return asegurado;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public Integer getPesoTotal() {
+        return pesoTotal;
+    }
+
+    public Integer getCapacidadTotalOcupada() {
+        return capacidadTotalOcupada;
     }
 }

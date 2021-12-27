@@ -23,4 +23,12 @@ public class Bodega extends Entity<BodegaId> {
     public void actualizarCapacidadCarga(Integer capacidadTotalMercancia, Integer capacidaTotalEquipaje){
         this.capacidadCarga = capacidadCarga.actualizarCapacidad(capacidadTotalMercancia, capacidaTotalEquipaje);
     }
+
+    public List<PiezaMercancia> getListadoPiezasMercancia() {
+        return listadoPiezasMercancia;
+    }
+
+    public CapacidadCarga getCapacidadCarga() {
+        return capacidadCarga;
+    }
 }

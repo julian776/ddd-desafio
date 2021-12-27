@@ -25,4 +25,16 @@ public class Avion extends Entity<AvionId> {
         Objects.requireNonNull(personal);
         this.listaPersonal.add(personal);
     }
+
+    public Piloto getPiloto() {
+        return piloto;
+    }
+
+    public Bodega getBodega() {
+        return bodega;
+    }
+
+    public List<Personal> getListaPersonal() {
+        return listaPersonal;
+    }
 }

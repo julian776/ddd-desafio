@@ -31,4 +31,12 @@ public class Factura extends Entity<FacturaId> {
         System.out.println("De edad " + identificacion.edad());
         System.out.println("Total: " + this.total);
     }
+
+    public Identificacion getIdentificacion() {
+        return identificacion;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
 }

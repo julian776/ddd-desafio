@@ -2,6 +2,8 @@ package com.sofka.vuelos.domain.vuelo;
 
 import com.sofka.vuelos.domain.events.*;
 
+import java.util.ArrayList;
+
 public class VueloChange extends co.com.sofka.domain.generic.EventChange {
 
     public VueloChange(Vuelo vuelo){

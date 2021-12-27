@@ -1,5 +1,6 @@
 package com.sofka.vuelos.domain.vuelo;
 
+import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.domain.generic.Entity;
 
 import java.util.List;

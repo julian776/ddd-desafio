@@ -27,4 +27,12 @@ public class Pasajero extends Entity<PasajeroId> {
     public void actualizarCuidados(Boolean oxigeno, Boolean embarazo, Boolean mareo, Boolean bebe){
         this.cuidadosExtra = cuidadosExtra.actualizar(oxigeno, embarazo, mareo, bebe);
     }
+
+    public Identificacion identificacion() {
+        return identificacion;
+    }
+
+    public CuidadosExtra cuidadosExtra() {
+        return cuidadosExtra;
+    }
 }

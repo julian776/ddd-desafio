@@ -24,12 +24,14 @@ public class Factura extends Entity<FacturaId> {
         this.total += cantidadAumentada;
     }
 
-    public void generarFactura() {
+    public Double generarFactura() {
         System.out.println("Factura numero " + entityId);
         System.out.println("Usuario " + identificacion.nombre());
         System.out.println("Documento " + identificacion.numeroIdentificacion());
         System.out.println("De edad " + identificacion.edad());
         System.out.println("Total: " + this.total);
+
+        return total;
     }
 
     public Identificacion getIdentificacion() {

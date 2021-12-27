@@ -1,6 +1,7 @@
 package com.sofka.vuelos.domain.vuelo;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.sofka.vuelos.domain.events.*;
 
 import java.util.List;
@@ -21,6 +22,12 @@ public class Vuelo extends AggregateEvent<VueloId> {
     private Vuelo(VueloId entityId){
         super(entityId);
         subscribe(new VueloChange(this));
+    }
+
+    public static Vuelo from(VueloId entityId, List<DomainEvent> domainEvents) {
+        var vuelo = new Vuelo(entityId);
+        domainEvents.forEach(vuelo::applyEvent);
+        return vuelo;
     }
 
     public Ruta getRuta() {

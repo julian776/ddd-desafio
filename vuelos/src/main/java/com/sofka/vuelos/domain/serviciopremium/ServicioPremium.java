@@ -1,6 +1,7 @@
 package com.sofka.vuelos.domain.serviciopremium;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.sofka.vuelos.domain.events.ServicioIniciado;
 import com.sofka.vuelos.domain.events.TareaAgregada;
 import com.sofka.vuelos.domain.events.TareaFinalizada;
@@ -19,6 +20,7 @@ public class ServicioPremium extends AggregateEvent<ServicioPremiumId> {
     public ServicioPremium(ServicioPremiumId entityId, Hashtable<VehiculoId, VehiculoCliente> vehiculosCliente,
                            List<Beneficiario> beneficiarios, Hashtable<TareaId, Tarea> listadoTareas) {
         super(entityId);
+        subscribe(new ServicioChange(this));
         Objects.requireNonNull(vehiculosCliente);
         Objects.requireNonNull(beneficiarios);
         Objects.requireNonNull(listadoTareas);
@@ -28,6 +30,12 @@ public class ServicioPremium extends AggregateEvent<ServicioPremiumId> {
     private ServicioPremium(ServicioPremiumId entityId){
         super(entityId);
         subscribe(new ServicioChange(this));
+    }
+
+    public static ServicioPremium from(ServicioPremiumId entityId, List<DomainEvent> retrieveEvents) {
+        var servicio = new ServicioPremium(entityId);
+        retrieveEvents.forEach(servicio::applyEvent);
+        return servicio;
     }
 
     public void agregarTarea(Tarea tarea){
